@@ -1,22 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
 
+function Helloworld(){
+  return(
+    <div id="hello">Hi! Im component named hello word</div>
+  );
+}
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Hello Pascu!
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>This is component: <Helloworld/></p>
       </header>
     </div>
   );
