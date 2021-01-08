@@ -1,8 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
-import React from 'react' // for class Helloworld
+import {Component} from 'react'
 
-/*
+import tasks from './sample/tasks.json'
+import Tasks from './component/Tasks'
+
+//console.log(tasks)
+class App extends Component{
+  
+  state = {
+    tasks: tasks
+  }
+  
+  render(){
+    return  <div> <Tasks tasks={this.state.tasks}/> </div>
+  }
+}
+
+export default App;
+
+
+
+
+
+
+// Old code (see commit)
+
+/*import React from 'react' // for class Helloworld
+
+
 //-------------------------------------------------------------------
 //------------------Component Helloworld-----------------------------
 //-------------------------------------------------------------------
@@ -20,6 +45,7 @@ import React from 'react' // for class Helloworld
 //--------------------------or---------------------------------------------
 //-------------------------------------------------------------------------
 */
+/*
 class Helloworld extends React.Component{
 
   state = {
@@ -34,10 +60,10 @@ class Helloworld extends React.Component{
       return (
         <div id="hello">
           {this.props.rank} Hi {this.props.myname}! Im "COMPONATOR"
-          <button onClick={this.toggleShow
+          <button onClick={this.toggleShow*/
             /*------------3ro^^^
             ()=>this.setState({show: false})  2do
-            alert('Component state: '+ this.state.show) 1ro*/}>
+            alert('Component state: '+ this.state.show) 1ro*//*}>
             
             Toggle State
           
@@ -48,9 +74,9 @@ class Helloworld extends React.Component{
       return(
         <div id="hello"> 
           There are not element. Please toggle state
-          <button onClick={this.toggleShow
+          <button onClick={this.toggleShow*/
             /*()=> this.setState({show: true}) 
-            alert('Component state: '+ this.state.show) */}>
+            alert('Component state: '+ this.state.show) *//*}>
             Toggle State
           </button>
         </div>
@@ -77,6 +103,4 @@ function App() {
       </header>
     </div>
   );
-}
-
-export default App;
+}*/
