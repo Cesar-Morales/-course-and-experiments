@@ -7,12 +7,8 @@ import Tasks from './component/Tasks'
 //console.log(tasks)
 class App extends Component{
   
-  state = {
-    tasks: tasks
-  }
-  
   render(){
-    return  <div> <Tasks tasks={this.state.tasks}/> </div>
+    return  <div> <Tasks tasks={tasks}/> </div>
   }
 }
 
