@@ -15,7 +15,7 @@
         "id":2,
         "title": "Task 2",
         "description": "Hi, Im a Task 2",
-        "done": false
+        "done": true
     },
     {
         "id":3,
