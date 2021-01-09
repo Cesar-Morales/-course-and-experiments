@@ -6,18 +6,19 @@ class Task extends Component{
     state = {
         done: this.props.task.done
       }
+       
 
     toggleState = () => {
-        console.log(this.state.done)
+        //console.log(this.state.done)
         this.setState({done: !this.state.done}) ///FALTA CONECTAR STATE CON STYLE
     }
     
     StyleCompleted(){
         //with func cant add conditional
         return{
-            background: this.props.task.done ? 'black' : 'gray', /* cond inline (JS) */
+            background: this.state.done ? 'black' : 'gray', /* cond inline (JS) */
             color: 'white',
-            textDecoration: this.props.task.done ? 'none' : 'line-through' /* cond inline (JS) */
+            textDecoration: this.state.done ? 'none' : 'line-through' /* cond inline (JS) */
         }
     }
 
