@@ -1,5 +1,6 @@
 import './App.css';
 import {Component} from 'react';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
 // DB
 import tasks from './sample/tasks.json';
@@ -56,14 +57,22 @@ class App extends Component{
   render(){
     //console.log(tasks)
     return  <div>
-                <TaskForm 
-                addTask={this.addTask}/> 
-                <Tasks 
-                  tasks={this.state.tasks} 
-                  deleteTask={this.deleteTask}
-                  checkDone={this.checkDone}/> 
-                <Posts/>
-
+              <Router>
+                <Link to='/'>Home</Link>
+                <br></br>
+                <Link to='/posts'>Posts</Link>
+                <Route exact path='/' render={ () => { 
+                  return <div>
+                    <TaskForm 
+                      addTask={this.addTask}/> 
+                    <Tasks 
+                      tasks={this.state.tasks} 
+                      deleteTask={this.deleteTask}
+                      checkDone={this.checkDone}/> 
+                  </div>
+                }}/>
+                <Route path='/posts' component={Posts}/>
+              </Router>
             </div>
   }
 }
