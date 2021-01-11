@@ -28,7 +28,7 @@ export default class TaskForm extends Component {
         return(
             <div>
             <form style={formStyle} onSubmit={this.onSubmit}>
-                <h1>Form</h1>
+                <h1>Add Tasks:</h1>
                 <input  type='text' 
                         name='title'
                         placeholder='Write Task' 
@@ -44,7 +44,7 @@ export default class TaskForm extends Component {
                             value={this.state.description}>
                 </textarea>
                 <hr/>
-                <input type='submit'></input>
+                <input type='submit' value="Create"></input>
             </form>
             </div>
         )
@@ -53,7 +53,7 @@ export default class TaskForm extends Component {
 
 const formStyle = {
     border: '1px solid black',
-    background: 'yellow',
+    background: 'purple',
     padding: '50px'
 }
 
