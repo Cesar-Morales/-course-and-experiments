@@ -11,6 +11,7 @@ class Task extends Component {
     btnDeactivate = () => {
         //console.log(this.state.done)
         this.setState({done: false}) ///FALTA CONECTAR STATE CON STYLE
+        //console.log(this.props)
     }
 
     btnActivate = () => {
@@ -30,16 +31,17 @@ class Task extends Component {
     render(){
         const {task} = this.props;
         //const redColor = {background: 'red'} # use style={redColor}
-   
+        //console.log(this.props.deleteTask)
         return  <p style={this.StyleCompleted()}/*functionJS*/ /*style= {dark} (jsObject)*/ /*className= 'red' (cssFile) ---or--- style={{background: 'red'}} (inlineStyle) */>
                     ID: {task.id} - 
                     TITLE: {task.title} - 
                     DESCRIPTION: {task.description} 
-                    <button style={btnDelete} /* jsObject*/ onClick={this.btnDeactivate}>
-                        X
+                    <button style={btnDelete} onClick={this.props.deleteTask.bind(this, task.id)}> delete </button>
+                    <button style={btnIncomplete} /* jsObject*/ onClick= {this.btnActivate}>
+                        incomplete
                     </button>
-                    <button style={btnAccept} onClick= {this.btnActivate}>
-                        V
+                    <button style={btnComplete} onClick={this.btnDeactivate}>
+                        complete
                     </button>
                 </p>
     }
@@ -51,6 +53,17 @@ Task.propTypes = {
 }
 
     // Javascript Object
+    const btnIncomplete = {
+        fontSize: '18px',
+        background: 'purple',
+        color: 'white',
+        border: '1px solid black',
+        padding: '10px 15px',
+        borderRadius: '50%',
+        cursor: 'pointer',
+        //float: 'right'
+    }
+
     const btnDelete = {
         fontSize: '18px',
         background: 'red',
@@ -62,7 +75,7 @@ Task.propTypes = {
         //float: 'right'
     }
 
-    const btnAccept = {
+    const btnComplete = {
         fontSize: '18px',
         background: 'green',
         color: 'white',

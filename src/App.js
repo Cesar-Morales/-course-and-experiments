@@ -15,6 +15,13 @@ class App extends Component{
     tasks:tasks
   }
   
+  deleteTask = (id) => {
+      //console.log(id);
+      const newTask = this.state.tasks.filter(task => task.id !== id);
+      //console.log(newTask);
+      this.setState({tasks: newTask})
+  }
+
   addTask = (text, description) => {
     //console.log('adding a new task')
     //console.log(text, description)
@@ -25,18 +32,23 @@ class App extends Component{
         description: description,
         done: true
       }
-    console.log(newTask)
+    //console.log(newTask)
     this.setState({
       tasks: [...this.state.tasks, newTask] //adding
     })
   }
 
 
+
+
   render(){
-    console.log(tasks)
+    //console.log(tasks)
     return  <div>
-                <TaskForm addTask={this.addTask}/> 
-                <Tasks tasks={this.state.tasks}/> 
+                <TaskForm 
+                addTask={this.addTask}/> 
+                <Tasks 
+                  tasks={this.state.tasks} 
+                  deleteTask={this.deleteTask}/> 
             </div>
   }
 }
