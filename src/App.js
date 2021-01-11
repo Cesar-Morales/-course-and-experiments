@@ -22,12 +22,23 @@ class App extends Component{
       this.setState({tasks: newTask})
   }
 
+  checkDone = id => {
+    //console.log(id)
+    const newTasks = this.state.tasks.map(task => {
+      if (task.id === id) {
+        task.done = !task.done
+      }
+      return task
+    })
+    this.setState({tasks: newTasks})
+  }
+
   addTask = (text, description) => {
     //console.log('adding a new task')
     //console.log(text, description)
     const newTask = 
       {
-        id:this.state.tasks.length,
+        id: this.state.tasks.length,
         title: text,
         description: description,
         done: true
@@ -48,7 +59,8 @@ class App extends Component{
                 addTask={this.addTask}/> 
                 <Tasks 
                   tasks={this.state.tasks} 
-                  deleteTask={this.deleteTask}/> 
+                  deleteTask={this.deleteTask}
+                  checkDone={this.checkDone}/> 
             </div>
   }
 }
