@@ -1,14 +1,22 @@
 import './App.css';
-import {Component} from 'react'
+import {Component} from 'react';
 
-import tasks from './sample/tasks.json'
-import Tasks from './component/Tasks'
+// DB
+import tasks from './sample/tasks.json';
+
+//Components
+import Tasks from './component/Tasks';
+import TaskForm from './component/TaskForm';
 
 //console.log(tasks)
 class App extends Component{
   
   render(){
-    return  <div> <Tasks tasks={tasks}/> </div>
+    
+    return  <div>
+                <TaskForm/> 
+                <Tasks tasks={tasks}/> 
+            </div>
   }
 }
 
