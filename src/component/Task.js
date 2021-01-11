@@ -1,5 +1,6 @@
 import {Component} from 'react';
-import './Task.css'
+import './Task.css';
+import PropsTypes from 'prop-types';
 
 class Task extends Component {
     
@@ -43,6 +44,11 @@ class Task extends Component {
                     </button>
                 </p>
     }
+}
+
+Task.propTypes = {
+    task : PropsTypes.object.isRequired //Especifica tipo de dato a recibir con lib proptypes (tamb podemos usar Flow o Typescript)
+    //PropsTypes.array, PropsTypes.numbre, etc
 }
 
     // Javascript Object
