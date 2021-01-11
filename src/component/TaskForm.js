@@ -12,6 +12,7 @@ export default class TaskForm extends Component {
     onSubmit = (event) => {
         //console.log('submiting..');
         //console.log(this.state)
+        this.props.addTask(this.state.title, this.state.description)
         event.preventDefault(); //
     }
 
@@ -25,6 +26,7 @@ export default class TaskForm extends Component {
 
     render(){
         return(
+            <div>
             <form style={formStyle} onSubmit={this.onSubmit}>
                 <h1>Form</h1>
                 <input  type='text' 
@@ -44,6 +46,7 @@ export default class TaskForm extends Component {
                 <hr/>
                 <input type='submit'></input>
             </form>
+            </div>
         )
     }
 }

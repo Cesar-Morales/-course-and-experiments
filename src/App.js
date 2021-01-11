@@ -11,11 +11,32 @@ import TaskForm from './component/TaskForm';
 //console.log(tasks)
 class App extends Component{
   
+  state = {
+    tasks:tasks
+  }
+  
+  addTask = (text, description) => {
+    //console.log('adding a new task')
+    //console.log(text, description)
+    const newTask = 
+      {
+        id:this.state.tasks.length,
+        title: text,
+        description: description,
+        done: true
+      }
+    console.log(newTask)
+    this.setState({
+      tasks: [...this.state.tasks, newTask] //adding
+    })
+  }
+
+
   render(){
-    
+    console.log(tasks)
     return  <div>
-                <TaskForm/> 
-                <Tasks tasks={tasks}/> 
+                <TaskForm addTask={this.addTask}/> 
+                <Tasks tasks={this.state.tasks}/> 
             </div>
   }
 }

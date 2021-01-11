@@ -33,9 +33,8 @@ class Task extends Component {
    
         return  <p style={this.StyleCompleted()}/*functionJS*/ /*style= {dark} (jsObject)*/ /*className= 'red' (cssFile) ---or--- style={{background: 'red'}} (inlineStyle) */>
                     ID: {task.id} - 
-                    TITLE: {task.title} - \
+                    TITLE: {task.title} - 
                     DESCRIPTION: {task.description} 
-                    <input type='checkbox'/>
                     <button style={btnDelete} /* jsObject*/ onClick={this.btnDeactivate}>
                         X
                     </button>
