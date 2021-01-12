@@ -1,6 +1,15 @@
 import React, {useState} from "react";
-import { Text, View, StyleSheet, Image, Button, Alert,
-TouchableOpacity, ScrollView, ToastAndroid} from "react-native";
+import { 
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  Button,
+  Alert,
+  TouchableOpacity,
+  ScrollView,
+  ToastAndroid,
+} from "react-native";
 import beagle from './assets/beagle.jpg'
 import * as ImagePicker from 'expo-image-picker'
 import * as Sharing from 'expo-sharing'
