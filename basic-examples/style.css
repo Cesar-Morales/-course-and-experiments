@@ -1,0 +1,42 @@
+h1{
+    color:red;
+}
+h1.h1-inside{
+    color: blue;
+}
+h2.h1-inside{
+    color: blueviolet;
+}
+h3{
+  text-align:right;
+}
+h4{
+  border: 2px solid gray;
+}
+h5{
+  font-family: Comic Sans MS;
+  font-size: 50px;
+  text-align:center;
+  color: pink;
+}
+p{
+  background: black;
+  color: white;
+  font-size:50px;
+}
+p>span{
+  color: purple;
+}
+.ex-box{
+    border: 3px solid #aaa;
+    background-color: #eee;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 30px;
+}
