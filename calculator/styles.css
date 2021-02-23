@@ -1,0 +1,63 @@
+h1{
+    text-align: center;
+    text-decoration: underline;
+}
+
+.calculator{
+    width: 320px;
+    background-color: black;
+    color: white;
+    margin: auto;
+}
+
+.screen{
+    height: 60px;
+}
+
+.value{
+    font-size: 50px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+
+.buttons{
+    display: flex;
+}
+
+div.btn:hover{
+    background-color: wheat;
+    cursor: pointer;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    border: 1px solid black;
+    font-size: 30px;
+}
+
+.btn-sm{
+    width: 25%;
+}
+
+.btn-lg{
+    width: 75%;
+}
+
+.btn-md{
+    width: 50%;
+}
+
+.btn-color{
+    background-color: darkgrey;
+    color: black;
+}
+
+.btn-color:last-child{
+    background-color: peru;
+    color: white;
+}
