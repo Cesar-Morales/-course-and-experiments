@@ -31,6 +31,10 @@ div.btn:hover{
     cursor: pointer;
 }
 
+.buttons-container{
+    border: 2px solid black;
+}
+
 .btn{
     display: flex;
     align-items: center;
