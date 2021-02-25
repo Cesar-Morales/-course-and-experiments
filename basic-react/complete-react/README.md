@@ -1,13 +1,11 @@
-# Examples-and-exercises-react
+# Complete-React
+Can see the changes that have ocurred in react. 
+Step by step (commits)
 
-## package.json
 ---
-### prettier --write 
-> cd /basic-reactCDN
->
+## package.json "scripts"
+> ## prettier --write 
 > npm run format 
 
-### parcel src/index.html 
-> cd /basic-reactCDN
->
+> ## parcel src/index.html 
 > npm run dev
