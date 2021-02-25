@@ -1,0 +1,17 @@
+.imgAPI{
+    width: 33%;
+    height: auto;
+}
+
+h1{
+    text-align: center;
+    text-decoration: underline;
+}
+
+body{
+    margin: auto;
+}
+
+.dogos{
+    display: flex;
+}
