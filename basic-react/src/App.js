@@ -1,13 +1,6 @@
-
-
-const Songs = (props) => {
-  return React.createElement("section", { className: "card" }, [
-    React.createElement("h2", {}, `${props.name}`),
-    React.createElement("p", {}, `Album: ${props.album}`),
-    React.createElement("p", {}, `Interpreter: ${props.interpreter}`),
-    React.createElement("p", {}, `Genero: ${props.genero}`),
-  ]);
-};
+import React from "react";
+import { render } from "react-dom";
+import Songs from "./Songs";
 
 //Class component
 class App extends React.Component {
@@ -55,4 +48,4 @@ const App = () => {
     ])
 }*/
 
-ReactDOM.render(React.createElement(App), document.getElementById("root"));
+render(React.createElement(App), document.getElementById("root"));
