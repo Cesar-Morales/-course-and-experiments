@@ -1,0 +1,63 @@
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+body {
+    background-image: url(../static/background.jpeg);
+    background-size: 100% 100%;
+    font-size: 3rem;
+    background-color: dimgray;
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+    margin-left: 200px;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.card{
+    flex-direction: row;
+    border-radius: 5%;
+    overflow: hidden; /*ocultar sobrante*/
+    border: 1px solid black;
+    width: 300px;
+    background-color: peru;
+    height:500px;
+}
+
+.pokemoName{
+    font-size: 3.5rem;
+}
+
+.pokemonImg{
+    background-image: url(../static/background-card.jpeg);
+    border: 2px solid black;
+    height: 50%;
+    margin: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#pokemon{
+    width: 200px;
+    height: 200px;
+}
+
+.btn{
+    margin-top: 20px;
+    flex-direction: column;
+}
+
