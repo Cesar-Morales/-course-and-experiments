@@ -10,14 +10,20 @@
 </head>
 <body>
     <main class="flex">
-        <article>
+        <article class="flex-content">
+            <img class="imgHeader" src="static/pokemonFont.png">
             <article class="card">
                 <div class="pokemonImg">
                     <img src="./static/pockemonBall.png" id="pokemon"/>
                 </div>
-                <p class="pokemoName">
-                    None POKEMON yet!
-                </p>
+                <div class="card-footer">
+                    <p class="pokemoName">
+                        None POKEMON yet!
+                    </p>
+                    <p class="pokemonNumber">
+                        #
+                    </p>
+                </div>
             </article>
             <button class="btn" onclick="newPoke()">
                 Get a Random Pokemon

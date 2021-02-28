@@ -17,25 +17,53 @@ body {
 .flex{
     display: flex;
     flex-direction: row;
-    margin-left: 200px;
+    margin: auto;
     align-items: center;
     height: 100vh;
+
+    .flex-content{
+        padding: 30px;
+        margin-left: 50px;
+    }
+
+    .imgHeader{
+        
+        justify-content: flex-end;
+        margin: 10px;
+    }
 }
+
 
 
 .card{
     flex-direction: row;
     border-radius: 5%;
+    margin: auto;
     overflow: hidden; /*ocultar sobrante*/
-    border: 1px solid black;
+    border: 3px solid black;
     width: 300px;
     background-color: peru;
-    height:500px;
+    height:auto;
+    .card-footer{
+        width: auto;
+        height: auto;
+        background-color: bisque;
+        margin: 20px;
+        overflow: hidden;
+        border-bottom-left-radius: 5%;
+        border-bottom-right-radius: 5px;
+        .pokemoName{
+            font-size: 3.5rem;
+            text-align: center;
+        }
+        .pokemonNumber{
+            text-align: end;
+            margin: auto;
+            justify-content: flex-end;
+        }
+    }
 }
 
-.pokemoName{
-    font-size: 3.5rem;
-}
 
 .pokemonImg{
     background-image: url(../static/background-card.jpeg);
@@ -57,7 +85,7 @@ body {
 }
 
 .btn{
-    margin-top: 20px;
+    margin: 20px 0 0 15%;
     flex-direction: column;
 }
 

@@ -4,6 +4,8 @@ const pokeName = document.querySelector('.pokemoName');
 
 const pokeImage = document.querySelector('.pokemonImg');
 
+const pokeNum = document.querySelector('.pokemonNumber')
+
 const numMax = 1;
 const numMin = 101;
 
@@ -16,7 +18,7 @@ function getRandomIntInclusive(min, max) {
 
 
 function newPoke(){
-    
+
     const randomPoke = getRandomIntInclusive(numMax, numMin);
 
     const promise = fetch(POKE_API+randomPoke);
@@ -29,7 +31,8 @@ function newPoke(){
                 const lastPoke = document.querySelector('#pokemon');
                 lastPoke.remove();
             }
-            pokeName.innerText = data.name + ' #' + randomPoke;
+            pokeName.innerText = data.name;
+            pokeNum.innerText = '# ' + randomPoke;
             const img = document.createElement('img');
             img.src = data.sprites.front_default;
             img.id = 'pokemon';
