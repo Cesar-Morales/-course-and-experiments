@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
+// eslint-disable-next-line import/no-unresolved
 import Songs from "./Songs";
 
 //Class component
@@ -27,7 +28,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <h1 onClick={this.handleTitleClick}>Playlist</h1>
+        <h1 /*onClick={this.handleTitleClick}*/>Playlist</h1>
         <hr />
         <Songs
           name="Barbazul"

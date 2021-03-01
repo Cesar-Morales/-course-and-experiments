@@ -8,4 +8,9 @@ Step by step (commits)
 > npm run format 
 
 > ## parcel src/index.html 
-> npm run dev
+> npm run dev  
+
+> ## lint src/* (js & jsx)
+> npm run lint
+>> ### DEBUG
+>> npm run lint -- --debug

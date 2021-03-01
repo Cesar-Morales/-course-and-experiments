@@ -4,7 +4,7 @@ node_modules
 package-lock.json
 .cache
 dist
-
+.env
 
 # old
 # dependencies
