@@ -1,14 +1,23 @@
 import React from "react";
 import { render } from "react-dom";
-// eslint-disable-next-line import/no-unresolved
-import Songs from "./Songs";
+import pf from 'petfinder-client';
+
+//import Songs from "./Songs";
+import Pet from "./Pet";
+
+const petfinder = pf({
+  key: process.env.API_KEY,
+  secret: process.env.API_SECRET
+})
+
 
 //Class component
-class App extends React.Component {
-  handleTitleClick() {
-    alert("you clicked the title");
-  }
-  render() {
+//class App extends React.Component {
+  //handleTitleClick() {
+  //  alert("you clicked the title");
+  //}
+  
+  //render() {
     //return React.createElement("div", {}, [
     //  React.createElement("h1", { onClick: this.handleTitleClick }, "Playlist"),
     //  React.createElement("hr"),
@@ -25,12 +34,67 @@ class App extends React.Component {
     //    genero: "Rock",
     //  }),
     //]);
+class App extends React.Component {
 
+    constructor(props){
+      super(props);
+
+      this.state = {
+        pets: []
+      }
+
+    }
+
+  componentDidMount(){
+      petfinder.pet.find({output: 'full', location: "Seattle,WA"})
+        .then( data =>{
+          let pets;
+
+          if(data.petfinder.pets && data.petfinder.pets.pet){
+            if(Array.isArray(data.petfinder.pets.pet)) {
+              pets = data.petfinder.pets.pet;
+            } else{
+              pets = [data.petfinder.pets.pet];
+            }
+          } else {
+            pets = [];
+          }
+
+          this.setState({
+            pets
+          })
+        })
+    }
+
+    render() {
     return (
       <div>
-        <h1 /*onClick={this.handleTitleClick}*/>Playlist</h1>
-        <hr />
-        <Songs
+        <h1 /*onClick={this.handleTitleClick}*/>Adopt Me!</h1>
+        <hr/>
+        <div className="cards">
+          {this.state.pets.map(pet => {
+            let breed;
+
+            if(Array.isArray(pet.breeds.breed)){
+              breed = [pet.breeds.breed.join(" ,")];
+            }else{
+              breed = pet.breeds.breed;
+            }
+            
+            return(
+              <Pet 
+                key={pet.id}
+                animal={pet.animal}
+                name={pet.name}
+                breed={breed}
+                media={pet.media}
+                location={`${pet.contact.city}, ${pet.contact.state}`}
+              />
+            )
+          })}
+        </div>
+        
+        {/* <Songs
           name="Barbazul"
           album="Glup"
           interpreter="Patricio Rey"
@@ -41,7 +105,11 @@ class App extends React.Component {
           album="Artaud"
           interpreter="Luis Alberto"
           genero="Rock"
-        ></Songs>
+        ></Songs> */}
+        {/* DEBUG STATE 
+        <pre>
+          <code>{JSON.stringify(this.state, null, 4)}</code>
+        </pre>*/}
       </div>
     );
   }
