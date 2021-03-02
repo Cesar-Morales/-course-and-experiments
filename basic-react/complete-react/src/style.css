@@ -17,6 +17,9 @@ body {
   flex-direction: row;
 }
 
+.carousel{
+  border: 5px solid red;
+}
 img {
   height: 100%;
 }
