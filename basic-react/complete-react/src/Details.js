@@ -8,19 +8,15 @@ const petfinder = pf({
 });
 
 class Details extends React.Component {
-    constructor(props){
-        super(props);
-
-        this.state = {
+    state = {
             loading: true,
-            id: this.props.id
-        }
-    }
-
+    };
+    
     componentDidMount(){
         petfinder.pet.get({
             output: "full",
-            id: this.state.id
+            id: this.props.id
+
         }).then( data => {
             const pet = data.petfinder.pet;
             let breed;
@@ -38,7 +34,7 @@ class Details extends React.Component {
                 media: pet.media,
                 breed,
                 loading: false,
-                id: this.propsid
+                id: pet.id
             });
         })  .catch(() => {
             navigate("/")
