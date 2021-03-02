@@ -46,14 +46,11 @@ class Details extends React.Component {
         if (this.state.loading){
             return <h1> loading.. </h1>
         }
-        const {animal, breed, location, description, name, id, media } = this.state;
+        const {animal, breed, location, description, name, id } = this.state;
 
         return (
-            <div>
+            <div className="details">
                 <Carousel media={this.state.media} />
-                <div>
-                    <img src={media.photos.photo[0].value} alt={name}/>
-                </div>
                 <div>
                     <h1> {name} </h1>
                     <h2> {animal} - {breed} - {location} - id:{id} </h2>

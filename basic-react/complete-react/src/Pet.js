@@ -24,7 +24,6 @@ class Pet extends React.Component {
 
     return (
       <Link to={`/details/${id}`} className="pet">
-        <div className="card">
           <div className="image-container">
             <img src={photos[0].value} alt={name} />
           </div>
@@ -34,7 +33,6 @@ class Pet extends React.Component {
             <h2>Breed: {breed} </h2>
             <h2>Location: {location} </h2>
           </div>
-        </div>
       </Link>
     );
   }

@@ -6,25 +6,45 @@ class Carousel extends React.Component {
         active: 0
     }
 
+    // constructor(props) {
+    //     super(props)
+        
+    //     this.handleClick = this.handleClick.bind(this);
+    // }
+
     static getDerivedStateFromProps({ media }){
         let photos = [];
 
         if (media && media.photos && media.photos.photo) {
-            photos = media.photos.photo.filter( eachPhoto => eachPhoto['@size'] === 'pn' )
+            photos = media.photos.photo.filter( 
+                eachPhoto => eachPhoto['@size'] === 'pn' )
         }
 
         return { photos };
+    }
+    // 
+    handleIndexClick = (e) => {
+        this.setState({ 
+            active: +e.target.dataset.index
+        });
     }
 
     render() {
         const {photos, active } = this.state;
         return(
             <div className="carousel">
-                <h2>Carousel</h2>
                 <img src={photos[active].value} alt= 'primary animal'/>
-                <div className="carousel-small">
+                <div className="carousel-smaller">
                     {photos.map((photo, i) => (
-                        <img key={photo.value} src={photo.value} className={i === active ? 'active' : ''} alt="animal" />
+                        /* eslint-disable-next-line */
+                        <img 
+                            onClick={this.handleIndexClick}
+                            key={photo.value} 
+                            data-index={i}
+                            src={photo.value} 
+                            className={i === active ? 'active' : ''} 
+                            alt="animal" 
+                        />
                     ))}
                 </div>
             </div>

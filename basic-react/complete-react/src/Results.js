@@ -42,7 +42,7 @@ class Results extends React.Component {
 
   componentDidMount() {
     petfinder.pet
-      .find({ output: "full", location: "Seattle,WA" })
+      .find({ output: "full", location: "Port Rayfurt, NY" })
       .then((data) => {
         let pets;
 
@@ -64,7 +64,7 @@ class Results extends React.Component {
 
   render() {
     return (
-      <div className="cards">
+      <div className="search">
         {this.state.pets.map((pet) => {
           let breed;
 
