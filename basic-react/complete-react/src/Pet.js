@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@reach/router";
 
 // export const Pet = (props) => {
 
@@ -11,30 +12,32 @@ import React from "react";
 //   );
 // };
 
-class Pet extends React.Component{
-    render() {
-        const { name, animal, breed, media, location} = this.props;
-      
-        let photos = [];
+class Pet extends React.Component {
+  render() {
+    const { name, animal, breed, media, location, id } = this.props;
 
-        if(media && media.photos && media.photos.photo){
-            photos = media.photos.photo.filter(photo => photo["@size"] === "pn")
-        }
+    let photos = [];
 
-        return (
-            <div className='card'>
-                <div className='image-container'>
-                    <img src={photos[0].value} alt={name} />
-                </div>
-                <div className='info'>
-                    <h1>{name}</h1>
-                    <h2>Animal: {animal} </h2>
-                    <h2>Breed: {breed} </h2>
-                    <h2>Location: {location} </h2>
-                </div>
-            </div>
-        )
+    if (media && media.photos && media.photos.photo) {
+      photos = media.photos.photo.filter((photo) => photo["@size"] === "pn");
     }
+
+    return (
+      <Link to={`/details/${id}`} className="pet">
+        <div className="card">
+          <div className="image-container">
+            <img src={photos[0].value} alt={name} />
+          </div>
+          <div className="info">
+            <h1>{name}</h1>
+            <h2>Animal: {animal} </h2>
+            <h2>Breed: {breed} </h2>
+            <h2>Location: {location} </h2>
+          </div>
+        </div>
+      </Link>
+    );
+  }
 }
 
 export default Pet;
