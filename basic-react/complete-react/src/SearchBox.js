@@ -2,12 +2,17 @@ import React from "react";
 import { ANIMALS } from "petfinder-client";
 import { Consumer } from "./SearchContext";
 
-class SearchParams extends React.Component {
+class SearchBox extends React.Component {
+  handleFromSubmit = (e) =>{
+    e.preventDefault();
+    this.props.search();
+  }
   render() {
     return (
       <Consumer>
         {(context) => (
           <div className="search-params">
+            <form onSubmit={this.handleFromSubmit}>
             <label htmlFor="location">
               Location
               <input
@@ -51,7 +56,8 @@ class SearchParams extends React.Component {
                 ))}
               </select>
             </label>
-            <button>Submit</button>
+            <button >Submit</button>
+            </form>
           </div>
         )}
       </Consumer>
@@ -59,4 +65,4 @@ class SearchParams extends React.Component {
   }
 }
 
-export default SearchParams;
+export default SearchBox;
