@@ -24,15 +24,15 @@ class Pet extends React.Component {
 
     return (
       <Link to={`/details/${id}`} className="pet">
-          <div className="image-container">
-            <img src={photos[0].value} alt={name} />
-          </div>
-          <div className="info">
-            <h1>{name}</h1>
-            <h2>Animal: {animal} </h2>
-            <h2>Breed: {breed} </h2>
-            <h2>Location: {location} </h2>
-          </div>
+        <div className="image-container">
+          <img src={photos[0].value} alt={name} />
+        </div>
+        <div className="info">
+          <h1>{name}</h1>
+          <h2>Animal: {animal} </h2>
+          <h2>Breed: {breed} </h2>
+          <h2>Location: {location} </h2>
+        </div>
       </Link>
     );
   }
