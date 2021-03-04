@@ -1,10 +1,4 @@
-# Webpack and React
-
-## REQUIREMENTS
-
--npm
-
----
+# Webpack Configuration
 
 ## STEPS
 
@@ -38,9 +32,34 @@ npm i webpack-dev-server
 touch webpack.config.js
 ```
 
----
+# Adding React
 
-## RUN
+## STEPS
+
+### - Install Babel
+
+```sh
+npm i @babel/core @babel/cli @babel/preset-env @babel/preset-react @babel/plugin-proposal-class-properties
+```
+
+### - Create a Babel file
+
+```sh
+touch .babelrc
+```
+
+### - Install react & react-dom
+
+```sh
+npm i react react-dom
+```
+
+# RUN
 
 - npm install (_install all dependencies_)
 - npm run wp-s-d (_run like a --mode=development in in localhost:12345/_)
+
+# DEPLOY
+
+- npx webpack -p
+- result in /dist/\*
