@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import App from './component/App';
+import App from './components/App';
 
 render(
     <div>
-        <h1>App</h1>
+        <center><h1>Pokemon</h1></center>
         <App/>
     </div>,
     document.getElementById('app')
