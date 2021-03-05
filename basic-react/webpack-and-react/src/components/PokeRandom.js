@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Pokemon from './Pokemon';
 
-class App extends Component {
+class PokeRandom extends Component {
 
     state = {
        pokemon: {
@@ -32,12 +31,14 @@ class App extends Component {
     }
 
     render(){
-        return (
-            <div>
-                <Pokemon pokemon={this.state.pokemon}/>
-                <center><button onClick={this.getPokemon}>Random</button></center>
-            </div>
-        )}
+      return (
+        <div>
+          <center>
+            <h1>{this.state.pokemon.name}</h1>
+            <button onClick={this.getPokemon}>Random</button>
+          </center>
+        </div>
+      )}
 };
 
-export default App;
+export default PokeRandom;
