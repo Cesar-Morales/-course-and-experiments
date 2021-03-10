@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import pokedeck from '../static/pokedeck.png';
 class PokeRandom extends Component {
 
     state = {
@@ -34,6 +34,7 @@ class PokeRandom extends Component {
       return (
         <div>
           <center>
+            <img src={pokedeck} height="500"/>
             <h1>{this.state.pokemon.name}</h1>
             <button onClick={this.getPokemon}>Random</button>
           </center>

@@ -11,7 +11,6 @@ import "./style/main.css";
 import font from './static/pokemonFont.png';
 
 render(
-    
         <Router>
             <div className="body">
                 <div className="header">
@@ -38,7 +37,7 @@ render(
                     </div>
                 
                 <div className="footer">
-                    Footer
+                    poke-api © 2021
                 </div>
             </div>
         </Router>
