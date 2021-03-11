@@ -6,6 +6,13 @@ body {
   color: white;
 }
 
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+  margin: auto;
+}
+
 .body {
   display: grid;
   grid-template-areas:
@@ -89,4 +96,43 @@ a:hover {
   text-align: center;
   text-decoration: underline;
   background-color: #fcca05;
+}
+
+.top-right {
+  position: absolute;
+  top: 36%;
+  left: 63%;
+  transform: translate(-50%, -50%);
+}
+
+.bottom-left {
+  position: absolute;
+  top: 83%;
+  left: 34.5%;
+  transform: translate(-50%, -50%);
+}
+
+.bottom-left:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.top-left {
+  position: absolute;
+  top: 44%;
+  left: 37%;
+  transform: translate(-50%, -50%);
+  height: 150px;
+  width: 225px;
+  border: 2px solid black;
+  border-radius: 5%;
+}
+
+.top-left-img {
+  position: absolute;
+  top: 44%;
+  left: 37%;
+  transform: translate(-50%, -50%);
+  height: 135px;
+  width: 135px;
 }
