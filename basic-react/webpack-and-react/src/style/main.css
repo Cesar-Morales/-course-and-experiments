@@ -1,5 +1,10 @@
-* {
+html {
   box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 body {
   background-color: black;
@@ -98,18 +103,39 @@ a:hover {
   background-color: #fcca05;
 }
 
+.container-deck {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 680px;
+  margin: auto;
+  margin-top: 50px;
+  box-sizing: content-box;
+}
+
+.top-left {
+  position: absolute;
+  height: 150px;
+  width: 225px;
+  border: 2px solid black;
+  border-radius: 5%;
+  margin-top: 147px;
+  margin-right: 345px;
+}
 .top-right {
   position: absolute;
-  top: 36%;
-  left: 63%;
-  transform: translate(-50%, -50%);
+  margin-top: 185px;
+  margin-left: 340px;
+  height: 125px;
+  width: 125px;
 }
 
 .bottom-left {
   position: absolute;
-  top: 83%;
-  left: 34.5%;
-  transform: translate(-50%, -50%);
+  margin-top: 425px;
+  margin-right: 415px;
+  height: 125px;
+  width: 125px;
 }
 
 .bottom-left:hover {
@@ -117,22 +143,10 @@ a:hover {
   cursor: pointer;
 }
 
-.top-left {
-  position: absolute;
-  top: 44%;
-  left: 37%;
-  transform: translate(-50%, -50%);
-  height: 150px;
-  width: 225px;
-  border: 2px solid black;
-  border-radius: 5%;
-}
-
 .top-left-img {
   position: absolute;
-  top: 44%;
-  left: 37%;
-  transform: translate(-50%, -50%);
-  height: 135px;
-  width: 135px;
+  margin-top: 160px;
+  margin-right: 345px;
+  height: 125px;
+  width: 125px;
 }

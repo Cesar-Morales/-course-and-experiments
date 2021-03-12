@@ -38,11 +38,13 @@ class PokeRandom extends Component {
     render(){
       return (
         <div className="container">
-          <img src={pokedeck} height="500"/>
-          <img className="top-left" src={this.state.background}/>
-          <img className="top-left-img" src={this.state.photo}/>
-          <h1 className="top-right">{this.state.pokemon.name}</h1>
-          <p className="bottom-left" onClick={this.getPokemon}>Random</p>
+          <div className="container-deck">
+            <img src={pokedeck} height="500"></img>
+            <img className="top-left" src={this.state.background}/>
+            <img className="top-left-img" src={this.state.photo}/>
+            <h1 className="top-right">{this.state.pokemon.name}</h1>
+            <p className="bottom-left" onClick={this.getPokemon}>Random</p>
+          </div>
         </div>
       )}
 };
